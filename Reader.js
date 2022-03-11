@@ -1,16 +1,22 @@
 const fs = require("fs")
+const util = require("util")
+
+
 
 class Reader{
 
-    Read(filepath){
+    constructor(){
+        this.reader = util.promisify(fs.readFile)
+        // readFilme é uma função que não retorna uma promisse, devido a isso, para que ela retorne uma promisse, é necssário utilizar o promisify
+    }
 
-        fs.readFile(filepath, "utf8", (err, data) => {
-            if(err){
-                console.log(err)
-            }else{
-                console.log(data)
-            }
-        })
+    async Read(filepath){
+        try{
+            return await this.reader(filepath, "utf8")
+        }catch{
+            return undefined
+        }
+        
     }
 
 }
