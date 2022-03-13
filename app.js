@@ -1,18 +1,18 @@
-const Reader = require("./Reader")
+const Reader = require("./Manipuladores/Reader.js")
 const Processor = require("./Processor")
 const Table = require("./table")
-const HtmlParser = require("./HtmlParser")
-const Writer = require("./Writer")
+const HtmlParser = require("./Conversores/HtmlParser")
+const Writer = require("./Manipuladores/Writer")
 
 const leitor = new Reader()
 const escritor = new Writer()
 
-leitor.Read("./usuarios.csv")
+leitor.Read("./Tabela/usuarios.csv")
 
 
 async function main(){
    
-    let dados =  await leitor.Read("./usuarios.csv")
+    let dados =  await leitor.Read("./Tabela/usuarios.csv")
     
     let dadosProcessados = Processor.Process(dados)
 
