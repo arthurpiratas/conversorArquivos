@@ -1,6 +1,6 @@
 const Reader = require("./Manipuladores/Reader.js")
-const Processor = require("./Processor")
-const Table = require("./table")
+const Processor = require("./ProcessadorDados/Processor.js")
+const Table = require("./ProcessadorDados/table")
 const HtmlParser = require("./Conversores/HtmlParser")
 const Writer = require("./Manipuladores/Writer")
 
